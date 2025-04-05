@@ -3,7 +3,7 @@ import Section from '@/components/section'
 import { usePrivy, useLogout } from '@privy-io/react-auth'
 
 const ProfilePage = () => {
-	const { user } = usePrivy()
+	const { user, exportWallet } = usePrivy()
 	const { logout } = useLogout()
 
 	return (
@@ -25,18 +25,29 @@ const ProfilePage = () => {
 							<p className="text-gray-500 text-sm">Wallet: {user?.wallet?.address?.slice(0, 6)}...{user?.wallet?.address?.slice(-4)}</p>
 						</div>
 					</div>
-				</div>
 
-				<div className="space-y-4">
 					<button
 						onClick={logout}
-						className="w-full bg-red-50 rounded-xl p-4 flex items-center justify-between text-red-600 font-medium hover:bg-red-100 transition-colors"
+						className="w-full bg-red-50 rounded-xl p-4 flex items-center justify-between text-red-600 font-medium hover:bg-red-100 transition-colors mb-6"
 					>
 						<span>Logout</span>
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
 							<path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
 						</svg>
 					</button>
+
+					<div className="border-t pt-6">
+						<h3 className="text-lg font-semibold mb-4">Wallet Security</h3>
+						<button
+							onClick={exportWallet}
+							className="w-full bg-indigo-50 rounded-xl p-4 flex items-center justify-between text-indigo-600 font-medium hover:bg-indigo-100 transition-colors"
+						>
+							<span>Export Private Key</span>
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+								<path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+							</svg>
+						</button>
+					</div>
 				</div>
 			</div>
 		</AuthenticatedPage>

@@ -196,22 +196,6 @@ const DevPage = () => {
 							Transfer 0.004 ETH
 						</button>
 					</div>
-
-					<div>
-						<p className='text-md font-bold uppercase text-gray-700'>
-							Export your private key
-						</p>
-						<p className='mt-2 text-sm text-gray-600'>
-							Export your embedded wallet&apos;s private key.
-						</p>
-						<button
-							type='button'
-							className='mt-2 w-full rounded-md bg-indigo-600 py-2 text-sm font-semibold text-white shadow-sm'
-							onClick={exportWallet}
-						>
-							Export key
-						</button>
-					</div>
 				</div>
 			</Section>
 
