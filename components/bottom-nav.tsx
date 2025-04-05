@@ -12,7 +12,7 @@ const BottomNav = () => {
 	return (
 		<div className='fixed inset-x-0 bottom-0 h-16 bg-white border-t px-safe'>
 			<div className='mx-auto h-full max-w-screen-md'>
-				<div className='grid h-full grid-cols-3'>
+				<div className='grid h-full grid-cols-4'>
 					<Link
 						href='/dashboard'
 						className={`flex flex-col items-center justify-center space-y-1 ${
@@ -39,6 +39,20 @@ const BottomNav = () => {
 							<path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
 						</svg>
 						<span className='text-xs'>Payments</span>
+					</Link>
+
+					<Link
+						href='/card'
+						className={`flex flex-col items-center justify-center space-y-1 ${
+							currentPath === '/card'
+								? 'text-green-600'
+								: 'text-gray-600 hover:text-gray-900'
+						}`}
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+							<path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+						</svg>
+						<span className='text-xs'>Card</span>
 					</Link>
 
 					<Link

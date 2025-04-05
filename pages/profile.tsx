@@ -2,10 +2,12 @@ import AuthenticatedPage from '@/components/authenticated-page'
 import Section from '@/components/section'
 import { usePrivy, useLogout } from '@privy-io/react-auth'
 import Link from 'next/link'
+import { useState } from 'react'
 
 const ProfilePage = () => {
 	const { user, exportWallet } = usePrivy()
 	const { logout } = useLogout()
+	const [showRewardPopup, setShowRewardPopup] = useState(true)
 
 	return (
 		<AuthenticatedPage>
@@ -13,6 +15,29 @@ const ProfilePage = () => {
 				<div className="flex justify-between items-center mb-8">
 					<h1 className="text-3xl font-semibold">Profile</h1>
 				</div>
+
+				{showRewardPopup && (
+					<div className="bg-white rounded-xl p-6 shadow-sm mb-6 relative">
+						<button 
+							onClick={() => setShowRewardPopup(false)}
+							className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+						>
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+								<path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+							</svg>
+						</button>
+						<div className="flex items-center space-x-4">
+							<div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 text-indigo-600">
+									<path strokeLinecap="round" strokeLinejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+								</svg>
+							</div>
+							<div>
+								<h2 className="text-lg font-semibold">Earn $10 USD for each friend you invite!</h2>
+							</div>
+						</div>
+					</div>
+				)}
 
 				<div className="bg-white rounded-xl p-6 shadow-sm mb-6">
 					<div className="flex items-center space-x-4 mb-6">
