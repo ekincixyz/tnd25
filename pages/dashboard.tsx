@@ -2,6 +2,7 @@ import AuthenticatedPage from '@/components/authenticated-page'
 import { usePrivy } from '@privy-io/react-auth'
 import { useEffect, useState } from 'react'
 import CurrencyChart from '@/components/CurrencyChart'
+import Link from 'next/link'
 
 const Dashboard = () => {
 	const { user } = usePrivy()
@@ -36,9 +37,11 @@ const Dashboard = () => {
 					</div>
 
 					<div className="flex gap-4">
-						<button className="flex-1 bg-green-600 rounded-full py-3 text-white font-medium hover:bg-green-700 transition-colors">
-							Add Cash
-						</button>
+						<Link href="/add-cash" className="flex-1">
+							<button className="w-full bg-green-600 rounded-full py-3 text-white font-medium hover:bg-green-700 transition-colors">
+								Add Cash
+							</button>
+						</Link>
 						<button className="flex-1 bg-gray-100 rounded-full py-3 text-gray-900 font-medium hover:bg-gray-200 transition-colors">
 							Cash Out
 						</button>
