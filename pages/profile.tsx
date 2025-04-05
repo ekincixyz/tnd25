@@ -1,6 +1,7 @@
 import AuthenticatedPage from '@/components/authenticated-page'
 import Section from '@/components/section'
 import { usePrivy, useLogout } from '@privy-io/react-auth'
+import Link from 'next/link'
 
 const ProfilePage = () => {
 	const { user, exportWallet } = usePrivy()
@@ -40,13 +41,23 @@ const ProfilePage = () => {
 						<h3 className="text-lg font-semibold mb-4">Wallet Security</h3>
 						<button
 							onClick={exportWallet}
-							className="w-full bg-indigo-50 rounded-xl p-4 flex items-center justify-between text-indigo-600 font-medium hover:bg-indigo-100 transition-colors"
+							className="w-full bg-indigo-50 rounded-xl p-4 flex items-center justify-between text-indigo-600 font-medium hover:bg-indigo-100 transition-colors mb-4"
 						>
 							<span>Export Private Key</span>
 							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
 								<path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
 							</svg>
 						</button>
+
+						<Link
+							href="/developer"
+							className="w-full bg-gray-50 rounded-xl p-4 flex items-center justify-between text-gray-600 font-medium hover:bg-gray-100 transition-colors"
+						>
+							<span>Developer Tools</span>
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+								<path strokeLinecap="round" strokeLinejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+							</svg>
+						</Link>
 					</div>
 				</div>
 			</div>
