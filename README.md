@@ -1,5 +1,16 @@
 # Privy PWA Demo
 
+<pre style="font-family: 'Courier New', Courier, monospace;">
+8888888b.                            
+888   Y88b                           
+888    888                           
+888   d88P .d88b.  .d8888b   8888b.  
+8888888P" d8P  Y8b 88K          "88b 
+888       88888888 "Y8888b. .d888888 
+888       Y8b.          X88 888  888 
+888        "Y8888   88888P' "Y888888 
+</pre>
+
 This is a template progressive web app (PWA) built with [Privy](https://www.privy.io/), [Viem](https://viem.sh/), [NextPWA](https://www.npmjs.com/package/next-pwa), and [TailwindCSS](https://tailwindcss.com/). All transactions are sent on the [Base](https://base.org/) Goerli testnet.
 
 You can see the deployed version at [pwa.privy.io](https://pwa.privy.io/).
